@@ -1,0 +1,99 @@
+/* General Layout */
+body {
+    background-color: #000;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    display: grid;
+    grid-template-rows: auto 1fr auto; /* Three rows */
+    grid-template-areas: 
+        "header"
+        "main"
+        "footer";
+    min-height: 100vh;
+    justify-content: center;
+}
+
+/* Wrapper to Limit Content Width */
+.container {
+    max-width: 1200px; /* Prevents stretching on large screens */
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    grid-area: header; /* Assign to Grid */
+    background-color: #228B22;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 50px;
+    color: white;
+}
+
+/* Main Content */
+main {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    margin: auto;
+}
+
+.logo-box img {
+    width: 150px; /* Adjust size as needed */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Quotes Section */
+.quotes-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.quote {
+    background-color: #222;
+    padding: 15px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+}
+
+.quote img {
+    width: 200px;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+}
+
+/* Footer */
+footer {
+    grid-area: footer; /* Assign to Grid */
+    background-color: rgb(19, 125, 9);
+    text-align: center;
+    color: white;
+    padding: 10px;
+    width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .quotes-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .quote {
+        width: 80%;
+    }
+}
